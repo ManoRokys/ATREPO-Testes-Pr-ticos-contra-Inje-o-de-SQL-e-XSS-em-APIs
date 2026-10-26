@@ -1,0 +1,29 @@
+[project]
+name = "atrepo-testes-pr-ticos-contra-inje-o-de-sql-e-xss-em-apis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { email = "fagundesluca77@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.162.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.14.1",
+    "pytest>=9.1.1",
+    "uvicorn>=0.54.0",
+]
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = [
+    "security: testes de seguranca ofensiva e defensiva (OWASP)",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore:.*testclient.*:Warning",
+]
+
